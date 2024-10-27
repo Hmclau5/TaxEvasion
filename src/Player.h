@@ -15,6 +15,9 @@ class Player
         
         bool grounded;
         Color color;
+
+        Texture2D texture;
+        Rectangle textureRec;
     
     public:
         Player(Rectangle InBounds, Color InColor);

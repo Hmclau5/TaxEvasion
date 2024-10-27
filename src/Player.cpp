@@ -15,7 +15,8 @@ Player::Player(Rectangle InBounds, Color InColor)
     jumpSpeed = 25.0;
     maxSpeed = 20.0;
     grounded = false;
-            
+    texture = LoadTexture("C:/Users/Haden/Desktop/NewTaxEvasion/assets/player.png");
+    textureRec = {0,0,128,128};            
 };
 
 float Player::GetxVel()
@@ -66,7 +67,21 @@ void Player::MoveInput()
 
 void Player::DrawPlayer()
 {
-    DrawRectangleRec(bounds, color);
+    //DrawRectangleRec(bounds, color);
+
+       // DrawTexture(texture, bounds.x - 16, bounds.y-32, WHITE);
+        //textureRec = {bounds.x -16 , bounds.y -32, bounds.width+32, bounds.height+32}; 
+
+        if (xVel < 0)
+            textureRec = {0,0,-128,128};
+        else
+            textureRec = {0,0,128,128};
+
+
+        DrawTextureRec(texture, textureRec , {bounds.x -16 , bounds.y -32}, WHITE);
+
+
+
 };
 
 void Player::MoveAndSlide()
