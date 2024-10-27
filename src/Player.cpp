@@ -67,10 +67,7 @@ void Player::MoveInput()
 
 void Player::DrawPlayer()
 {
-    //DrawRectangleRec(bounds, color);
 
-       // DrawTexture(texture, bounds.x - 16, bounds.y-32, WHITE);
-        //textureRec = {bounds.x -16 , bounds.y -32, bounds.width+32, bounds.height+32}; 
 
         if (xVel < 0)
             textureRec = {0,0,-128,128};

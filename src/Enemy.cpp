@@ -11,6 +11,8 @@ Enemy::Enemy(Rectangle inbounds, Color incolor, bool infixed)
     timeCount = 0;
     xVel = 5;
     yVel = 0;
+    texture = LoadTexture("C:/Users/Haden/Desktop/NewTaxEvasion/assets/badger.png");
+    textureRec = {0,0,128,256};
 }
 
 
@@ -22,7 +24,13 @@ Rectangle Enemy::GetBounds()
 
 void Enemy::DrawEnemy()
 {
-    DrawRectangleRec(bounds, color);
+    if (xVel < 0)
+            textureRec = {0,0,256,128};
+        else
+            textureRec = {0,0,-256,128};
+
+
+        DrawTextureRec(texture, textureRec , {bounds.x -16 , bounds.y}, WHITE);
 }
 
 void Enemy::Collide(Ground ground)

@@ -13,6 +13,8 @@ class Enemy
         float xVel, yVel, friction, moveSpeed;
         int timeCount;
         bool grounded, fixed;
+        Texture2D texture;  
+        Rectangle textureRec;      
 
     public:
         Enemy(Rectangle inbounds, Color incolor, bool infixed);
