@@ -15,8 +15,8 @@ class Badger : public Enemy
         Badger(float xIn, float yIn);
 
 
-        void Collide(Ground ground);
-        void MoveAndSlide();
+        void Collide(Ground ground) override;
+        void MoveAndSlide() override ;
 
 
 

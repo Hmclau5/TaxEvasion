@@ -4,7 +4,7 @@
 
 class Ground
 {
-    private:
+    protected:
         Rectangle bounds;
         Texture2D texture;
         Rectangle textureRec;
@@ -21,10 +21,6 @@ class Ground
 
 };
 
-class Surface : public Ground
-{
-    public:
-    Surface (int xIn, int yIn);
-};
+
 
 #endif // Ground.h

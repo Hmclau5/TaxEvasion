@@ -1,5 +1,5 @@
 #include "Enemy.h"
-
+#include<iostream>
 
 
 
@@ -28,5 +28,5 @@ void Enemy::DrawEnemy()
 }
 
 void Enemy::Collide(Ground ground){}
-void Enemy::MoveAndSlide(){}
+void Enemy::MoveAndSlide(){std::cout<<"FAK";}
 

@@ -30,21 +30,25 @@ Loader::Loader(string filename)
         }
         if(line.substr(0, commas[0]) == "BADGER")
         {
-            Badger temp
-            (
-                stof(line.substr(commas[0]+1, commas[1]- commas[0]-1)),
-                stof(line.substr(commas[1]+1, commas[2]- commas[1]-1))
+
+            enemies.push_back
+            (new Badger
+                (
+                    stof(line.substr(commas[0]+1, commas[1]- commas[0]-1)),
+                    stof(line.substr(commas[1]+1, commas[2]- commas[1]-1))
+                )
             );
-            enemies.push_back(temp);
         }
         if(line.substr(0, commas[0]) == "GROUND")
         {
-            Ground temp
-            (
-                stof(line.substr(commas[0]+1, commas[1]- commas[0]-1)),
-                stof(line.substr(commas[1]+1, commas[2]- commas[1]-1))
+            grounds.push_back
+            (new Surface
+                (
+                    stof(line.substr(commas[0]+1, commas[1]- commas[0]-1)),
+                    stof(line.substr(commas[1]+1, commas[2]- commas[1]-1))
+                )
             );
-            grounds.push_back(temp);
+        
         }
         if(line.substr(0, commas[0]) == "WINZONE")
         {
@@ -65,12 +69,12 @@ vector <Player> Loader::GetPlayers()
     return players;
 }
 
-vector <Ground> Loader::GetGrounds()
+vector <Ground*> Loader::GetGrounds()
 {
     return grounds;
 }
 
-vector <Enemy> Loader::GetEnemies()
+vector <Enemy*> Loader::GetEnemies()
 {
     return enemies;
 }

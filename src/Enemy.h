@@ -21,7 +21,7 @@ class Enemy
         virtual void Collide(Ground ground);
         virtual void MoveAndSlide();
 
-
+        //TODO ~Enemy()
 };
 
 

@@ -55,6 +55,7 @@ void Badger::MoveAndSlide()
         bounds.y += yVel;
 
         yVel += GRAVITY;
+        xVel +=.01;
 
         grounded = false;
 

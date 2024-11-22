@@ -11,6 +11,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Badger.h"
+#include "Surface.h"
 
 using namespace std;
 
@@ -22,8 +23,8 @@ class Loader
 
 
         vector <Player> players;
-        vector <Ground> grounds;
-        vector <Enemy> enemies;
+        vector <Ground*> grounds;
+        vector <Enemy*> enemies;
         vector <WinZone> winners;
 
 
@@ -37,8 +38,8 @@ class Loader
         Loader(string filename);
 
         vector <Player> GetPlayers();
-        vector <Ground> GetGrounds();
-        vector <Enemy> GetEnemies();
+        vector <Ground*> GetGrounds();
+        vector <Enemy*> GetEnemies();
         vector <WinZone> GetWinners();
 
 

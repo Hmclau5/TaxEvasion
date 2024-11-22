@@ -4,8 +4,8 @@
 Ground::Ground(float xIn, float yIn)
 {
     bounds = {(float)xIn, (float)yIn, 96, 96};
-    textureRec = {0,0,96,96};
-    texture = LoadTexture("C:/Users/Haden/Desktop/NewTaxEvasion/assets/ground.png");
+
+    
     
 };
 

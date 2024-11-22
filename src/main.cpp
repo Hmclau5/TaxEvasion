@@ -17,16 +17,18 @@ int main()
 {
 
     
-    InitWindow(screenWidth, screenHeight, "TaxEvasion");\
+    InitWindow(screenWidth, screenHeight, "TaxEvasion");
     
     SetTargetFPS(60);
  
     Loader load("C:/Users/Haden/Desktop/NewTaxEvasion/src/DevLevel.csv");
 
-    vector<Player> players = load.GetPlayers();
-    vector<Ground> grounds = load.GetGrounds();
-    vector<Enemy> enemies = load.GetEnemies();
+    vector<Player>  players = load.GetPlayers();
+    vector<Ground*>  grounds = load.GetGrounds();
+    vector<Enemy*>   enemies = load.GetEnemies();
     vector<WinZone> winners = load.GetWinners();
+
+    //vector<vector<Badger>> = load.GetEnemies;
     
     
     Camera2D camera = { 0 };
@@ -48,13 +50,19 @@ int main()
         players[0].MoveAndSlide();
   
 
-
-        for (Ground i : grounds)
+        for(long long unsigned int i = 0; i < enemies.size(); i ++)
         {
-            players[0].Collide(i);
+            enemies[i]->MoveAndSlide();
+            players[0].Collide(*enemies[i]);
+        }
+
+
+        for (Ground* i : grounds)
+        {
+            players[0].Collide(*i);
             for(long long unsigned int j = 0; j < enemies.size(); j ++)
             {
-                enemies[j].Collide(i);
+                enemies[j]->Collide(*i);
             }
 
         }
@@ -63,11 +71,7 @@ int main()
         players[0].Collide(winners[0]);
 
         
-        for(long long unsigned int i = 0; i < enemies.size(); i ++)
-        {
-            enemies[i].MoveAndSlide();
-            players[0].Collide(enemies[i]);
-        }
+
 
 
         
@@ -80,14 +84,14 @@ int main()
                 i.DrawPlayer();
             }
             
-            for (Ground i : grounds)
+            for (Ground* i : grounds)
             {
-                i.DrawGround();
+                i->DrawGround();
             }
 
-            for (Enemy i : enemies)
+            for (Enemy* i : enemies)
             {
-                i.DrawEnemy();
+                i->DrawEnemy();
             }
 
             for (WinZone i : winners)
