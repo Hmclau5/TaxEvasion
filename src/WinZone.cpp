@@ -1,10 +1,10 @@
 #include "WinZone.h"
 
-WinZone::WinZone(Rectangle InBounds, Color InColor)
+WinZone::WinZone(float xIn, float yIn)
 
 {
-    bounds = InBounds; 
-    color = InColor; 
+    bounds = {xIn, yIn, 96, 192}; 
+    
 
 
 }
@@ -17,6 +17,6 @@ Rectangle WinZone::GetBounds()
 
 void WinZone::DrawWinZone()
 {
-    DrawRectangleRec(bounds, color);
+    DrawRectangleRec(bounds, GREEN);
 
 }

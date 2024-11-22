@@ -2,7 +2,7 @@
 #include <vector>
 #include <iostream> 
 #include <fstream>
-
+ 
 #include "Loader.h"
 
 
@@ -52,7 +52,7 @@ int main()
         for (Ground i : grounds)
         {
             players[0].Collide(i);
-            for(int j = 0; j < enemies.size(); j ++)
+            for(long long unsigned int j = 0; j < enemies.size(); j ++)
             {
                 enemies[j].Collide(i);
             }
@@ -63,7 +63,7 @@ int main()
         players[0].Collide(winners[0]);
 
         
-        for(int i = 0; i < enemies.size(); i ++)
+        for(long long unsigned int i = 0; i < enemies.size(); i ++)
         {
             enemies[i].MoveAndSlide();
             players[0].Collide(enemies[i]);

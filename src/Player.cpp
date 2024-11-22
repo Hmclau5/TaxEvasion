@@ -4,10 +4,10 @@ const float GRAVITY = 1.2;
 
 
 
-Player::Player(Rectangle InBounds, Color InColor)
+Player::Player(float xIn, float yIn)
 {
-    bounds = InBounds;
-    color = InColor;
+    bounds = {xIn, yIn, 96 , 96};
+    
     xVel = 0;
     yVel = 0;
     friction = 2.0;
@@ -34,10 +34,7 @@ Rectangle Player::GetBounds()
     return bounds;
 }
 
-Color Player::GetColor()
-{
-    return color;
-}
+
 
 
 void Player::MoveInput()
@@ -149,7 +146,7 @@ void Player::Collide(Enemy enemy)
 {
     if(CheckCollisionRecs(bounds, enemy.GetBounds()))
     {
-        color = RED; 
+
         bounds.x = 0;
         bounds.y = 0;
     }
@@ -160,7 +157,7 @@ void Player::Collide(WinZone winZone)
 {
     if(CheckCollisionRecs(bounds, winZone.GetBounds()))
     {
-        color = GREEN;
+
         yVel -= 20; 
     }
 }

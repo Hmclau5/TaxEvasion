@@ -10,17 +10,17 @@
 class Player
 {
     private:
-       Rectangle bounds;
+        Rectangle bounds;
         float xVel, yVel, friction, moveSpeed, jumpSpeed, maxSpeed;
         
         bool grounded;
-        Color color;
+       
 
         Texture2D texture;
         Rectangle textureRec;
     
     public:
-        Player(Rectangle InBounds, Color InColor);
+        Player(float xIn, float yIn);
 
 
         Rectangle GetBounds();
@@ -29,7 +29,7 @@ class Player
 
         float GetyVel();
 
-        Color GetColor();
+        
 
         void MoveInput();
 

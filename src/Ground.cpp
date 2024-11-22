@@ -1,11 +1,14 @@
 
 #include "Ground.h"
 
-Ground::Ground(Rectangle InBounds, Color InColor)
+Ground::Ground(float xIn, float yIn)
 {
-    bounds = InBounds; 
-    color = InColor; 
+    bounds = {(float)xIn, (float)yIn, 96, 96};
+    textureRec = {0,0,96,96};
+    texture = LoadTexture("C:/Users/Haden/Desktop/NewTaxEvasion/assets/ground.png");
+    
 };
+
 
 Rectangle Ground::GetBounds()
 {
@@ -14,5 +17,5 @@ Rectangle Ground::GetBounds()
 
 void Ground::DrawGround()
 {
-    DrawRectangleRec(bounds, color);
+    DrawTextureRec(texture, textureRec , {bounds.x, bounds.y}, WHITE);
 };

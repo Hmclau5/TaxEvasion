@@ -6,10 +6,12 @@ class Ground
 {
     private:
         Rectangle bounds;
-        Color color; 
+        Texture2D texture;
+        Rectangle textureRec;
+        
 
     public:
-    Ground(Rectangle inBounds, Color InColor);
+    Ground(float xIn, float yIn);
 
     Rectangle GetBounds();
 
@@ -17,6 +19,12 @@ class Ground
 
 
 
+};
+
+class Surface : public Ground
+{
+    public:
+    Surface (int xIn, int yIn);
 };
 
 #endif // Ground.h

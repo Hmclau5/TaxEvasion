@@ -10,6 +10,7 @@
 #include "Ground.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "Badger.h"
 
 using namespace std;
 

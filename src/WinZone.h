@@ -8,10 +8,10 @@ class WinZone
 {
     private:
         Rectangle bounds;
-        Color color; 
+        
 
     public:
-        WinZone(Rectangle InBounds, Color InColor);
+        WinZone(float xIn, float yIn);
 
         Rectangle GetBounds();
 

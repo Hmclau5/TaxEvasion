@@ -7,23 +7,19 @@
 
 class Enemy
 {
-    private:
-        Rectangle bounds;
-        Color color;
-        float xVel, yVel, friction, moveSpeed;
-        int timeCount;
-        bool grounded, fixed;
-        Texture2D texture;  
-        Rectangle textureRec;      
+     protected:
+        Rectangle bounds, textureRec;
+        float xVel, yVel;  
+        Texture2D texture;
 
     public:
-        Enemy(Rectangle inbounds, Color incolor, bool infixed);
+        Enemy(float x, float y);
 
         Rectangle GetBounds();
 
-        void DrawEnemy();
-        void Collide(Ground ground);
-        void MoveAndSlide();
+        virtual void DrawEnemy();
+        virtual void Collide(Ground ground);
+        virtual void MoveAndSlide();
 
 
 };
