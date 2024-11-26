@@ -12,6 +12,8 @@
 #include "Enemy.h"
 #include "Badger.h"
 #include "Surface.h"
+#include "SubGround.h"
+#include "KillBox.h"
 
 using namespace std;
 

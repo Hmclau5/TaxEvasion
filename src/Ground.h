@@ -11,7 +11,7 @@ class Ground
         
 
     public:
-    Ground(float xIn, float yIn);
+    Ground(float xIn, float yIn, float widthIn, float heightIn);
 
     Rectangle GetBounds();
 

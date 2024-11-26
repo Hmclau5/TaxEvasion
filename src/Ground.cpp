@@ -1,9 +1,9 @@
 
 #include "Ground.h"
 
-Ground::Ground(float xIn, float yIn)
+Ground::Ground(float xIn, float yIn, float widthIn, float heightIn)
 {
-    bounds = {(float)xIn, (float)yIn, 96, 96};
+    bounds = {(float)xIn, (float)yIn, (float)widthIn , (float)heightIn};
 
     
     

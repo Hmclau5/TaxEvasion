@@ -28,5 +28,5 @@ void Enemy::DrawEnemy()
 }
 
 void Enemy::Collide(Ground ground){}
-void Enemy::MoveAndSlide(){std::cout<<"FAK";}
+void Enemy::MoveAndSlide(){}
 

@@ -76,7 +76,7 @@ int main()
 
         
         BeginDrawing();
-            ClearBackground(WHITE);
+            ClearBackground(BLUE);
             BeginMode2D(camera);
 
             for (Player i : players)

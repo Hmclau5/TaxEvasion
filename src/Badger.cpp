@@ -45,6 +45,11 @@ void Badger::Collide(Ground ground)
         }
     }
 
+    if(bounds.x+bounds.width > ground.GetBounds().x+ground.GetBounds().width)
+    xVel = - xVel;
+    if(bounds.x < ground.GetBounds().x)
+    xVel = - xVel;
+
 }
 
 void Badger::MoveAndSlide()

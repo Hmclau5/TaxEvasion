@@ -39,13 +39,42 @@ Loader::Loader(string filename)
                 )
             );
         }
-        if(line.substr(0, commas[0]) == "GROUND")
+        if(line.substr(0, commas[0]) == "KILLBOX")
+        {
+
+            enemies.push_back
+            (new KillBox
+                (
+                    stof(line.substr(commas[0]+1, commas[1]- commas[0]-1)),
+                    stof(line.substr(commas[1]+1, commas[2]- commas[1]-1)),
+                    stof(line.substr(commas[2]+1, commas[3]- commas[2]-1)),
+                    stof(line.substr(commas[3]+1, commas[4]- commas[3]-1))
+                )
+            );
+        }
+        if(line.substr(0, commas[0]) == "SURFACE")
         {
             grounds.push_back
             (new Surface
                 (
                     stof(line.substr(commas[0]+1, commas[1]- commas[0]-1)),
-                    stof(line.substr(commas[1]+1, commas[2]- commas[1]-1))
+                    stof(line.substr(commas[1]+1, commas[2]- commas[1]-1)),
+                    stof(line.substr(commas[2]+1, commas[3]- commas[2]-1)),
+                    stof(line.substr(commas[3]+1, commas[4]- commas[3]-1))
+                )
+            );
+        
+        }
+        if(line.substr(0, commas[0]) == "SUBGROUND")
+        {
+            grounds.push_back
+            (new SubGround
+                (
+                    stof(line.substr(commas[0]+1, commas[1]- commas[0]-1)),
+                    stof(line.substr(commas[1]+1, commas[2]- commas[1]-1)),
+                    stof(line.substr(commas[2]+1, commas[3]- commas[2]-1)),
+                    stof(line.substr(commas[3]+1, commas[4]- commas[3]-1))
+                    
                 )
             );
         

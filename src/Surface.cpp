@@ -1,8 +1,8 @@
 #include "Surface.h"
 
-Surface::Surface(float xIn,float yIn) 
-    : Ground(xIn, yIn)
+Surface::Surface(float xIn,float yIn, float widthIn, float heightIn) 
+    : Ground(xIn, yIn, widthIn, heightIn)
 {
-    textureRec = {0,0,96,96};
+    textureRec = {0,0,widthIn, heightIn};
     texture = LoadTexture("C:/Users/Haden/Desktop/NewTaxEvasion/assets/ground.png");
 }

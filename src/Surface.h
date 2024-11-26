@@ -6,7 +6,7 @@
 class Surface : public Ground
 {
     public: 
-        Surface(float xIn, float yIn);
+        Surface(float xIn, float yIn, float heightIn, float widthIn);
 
 
 
