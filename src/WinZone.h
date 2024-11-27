@@ -14,11 +14,11 @@ class WinZone : public Entity
     public:
         WinZone(float xIn, float yIn);
 
+        virtual Type GetType() override;
+
+        virtual void Draw()override;
+
         Rectangle GetBounds();
-
-        virtual Type getType() override;
-
-        void DrawWinZone();
 
 };
 

@@ -34,69 +34,34 @@ int main()
     camera.offset = (Vector2){ screenWidth/2.0f, screenHeight/2.0f };
     camera.rotation = 0.0f;
     camera.zoom = 1.0f;
-    
-
+    */
+    cout<<endl<<entities.size()<<endl;
 
     while (!WindowShouldClose())
     {
 
 
 
-        camera.target = {(players[0].GetBounds().x + players[0].GetBounds().width/2) - players[0].GetxVel() ,players[0].GetBounds().y + players[0].GetBounds().height/2};
+        //camera.target = {(players[0].GetBounds().x + players[0].GetBounds().width/2) - players[0].GetxVel() ,players[0].GetBounds().y + players[0].GetBounds().height/2};
         
-        players[0].MoveInput();
-        players[0].MoveAndSlide();
+        for (Entity* i : entities)
+        {
+            i->Update(entities);
+        }
   
 
-        for(long long unsigned int i = 0; i < enemies.size(); i ++)
-        {
-            enemies[i]->MoveAndSlide();
-            enemies[i]->PlayerDetect(players[0].GetBounds());
-            players[0].Collide(*enemies[i]);
-        }
-
-
-        for (Ground* i : grounds)
-        {
-            players[0].Collide(*i);
-            for(long long unsigned int j = 0; j < enemies.size(); j ++)
-            {
-                enemies[j]->Collide(*i);
-            }
-
-        }
-
-
-        players[0].Collide(winners[0]);
-
         
-
-
 
         
         BeginDrawing();
             ClearBackground(BLUE);
-            BeginMode2D(camera);
+            BeginMode2D(dynamic_cast<Player*>(entities[0])->GetCamera());
 
-            for (Player i : players)
+            for (Entity* i : entities)
             {
-                i.DrawPlayer();
+                i->Draw();
             }
             
-            for (Ground* i : grounds)
-            {
-                i->DrawGround();
-            }
-
-            for (Enemy* i : enemies)
-            {
-                i->DrawEnemy();
-            }
-
-            for (WinZone i : winners)
-            {
-                i.DrawWinZone();
-            }
             
 
 
@@ -110,7 +75,7 @@ int main()
 
 
 
-    */
+    
 
     return 0;
 

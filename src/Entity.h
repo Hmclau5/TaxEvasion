@@ -2,6 +2,9 @@
 #define ENTITY_H
 
 #include "raylib.h"
+#include <vector>
+
+using namespace std;
 
 class Entity
 {
@@ -19,9 +22,12 @@ class Entity
             Ground
         };
 
-        virtual Type getType()=0;
-        
+        Type type_;
 
+        virtual Type GetType();
+        virtual void Update(vector<Entity*> entities);
+        virtual void Draw();
+        Rectangle GetBounds();
 };
 
 #endif

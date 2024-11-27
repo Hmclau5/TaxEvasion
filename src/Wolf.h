@@ -15,6 +15,8 @@ class Wolf : public Enemy
     public:
         Wolf(float xIn, float yIn);
 
+        void Update(vector<Entity*>);
+
         void Collide(Ground ground) override;
         void MoveAndSlide() override;
         void PlayerDetect(Rectangle player) override;

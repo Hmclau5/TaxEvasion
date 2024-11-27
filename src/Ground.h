@@ -15,12 +15,13 @@ class Ground : public Entity
     public:
         Ground(float xIn, float yIn, float widthIn, float heightIn);
 
-        virtual Type getType() override;
+        virtual Type GetType() override;
         
+        virtual void Draw()override;
 
         Rectangle GetBounds();
 
-        void DrawGround();
+        
 
 
 

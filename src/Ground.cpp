@@ -16,12 +16,13 @@ Rectangle Ground::GetBounds()
     return bounds;
 };
 
-Entity::Type Ground::getType()
+Entity::Type Ground::GetType()
 {
     return type_;
 }
 
-void Ground::DrawGround()
+void Ground::Draw()
 {
     DrawTextureRec(texture, textureRec , {bounds.x, bounds.y}, WHITE);
+
 };

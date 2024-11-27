@@ -6,3 +6,7 @@ KillBox::KillBox(float xIn, float yIn, float widthIn, float heightIn)
     bounds = {xIn,yIn,widthIn, heightIn};
 }
 
+void KillBox::Update(vector<Entity*> entities)
+{
+    
+}

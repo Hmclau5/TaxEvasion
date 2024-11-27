@@ -18,6 +18,8 @@ class Player : public Entity
         bool grounded;
 
         Type type_;
+
+        Camera2D camera;
        
 
         Texture2D texture;
@@ -26,19 +28,23 @@ class Player : public Entity
     public:
         Player(float xIn, float yIn);
 
-        virtual Type getType() override;
+        virtual Type GetType() override;
 
         Rectangle GetBounds();
+
+        Camera2D GetCamera();
 
         float GetxVel();
 
         float GetyVel();
 
+        void Update(vector<Entity*> enetities  )override;
+
         
 
         void MoveInput();
 
-        void DrawPlayer();
+        void Draw()override;
 
         void MoveAndSlide();
 

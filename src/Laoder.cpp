@@ -129,7 +129,7 @@ vector <WinZone> Loader::GetWinners()
 
 std::vector<Entity*> Loader::GetEntities()
 {
-
+    return entities;
 }
 
 Loader::Loader(string filename)
@@ -151,7 +151,7 @@ Loader::Loader(string filename)
                 commas.push_back(i);
             }
 
-        if(commas.size() == 2)
+        if(commas.size() == 3)
         {
             if(line.substr(0, commas[0]) == "PLAYER")
             {
@@ -235,6 +235,7 @@ Loader::Loader(string filename)
                     )
                 );
             }
+            /*
             if(line.substr(0, commas[0]) == "KILLBOX")
             {
 
@@ -248,6 +249,7 @@ Loader::Loader(string filename)
                     )
                 );
             }
+            */
         }
     }
 

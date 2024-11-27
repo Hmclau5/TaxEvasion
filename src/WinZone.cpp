@@ -15,14 +15,14 @@ Rectangle WinZone::GetBounds()
     return bounds;
 }
 
-Entity::Type WinZone::getType()
+Entity::Type WinZone::GetType()
 {
     return type_;
 }
 
 
-void WinZone::DrawWinZone()
+void WinZone::Draw()
 {
     DrawRectangleRec(bounds, GREEN);
 
-}
+};

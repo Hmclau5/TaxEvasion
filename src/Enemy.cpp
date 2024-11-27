@@ -14,13 +14,18 @@ Rectangle Enemy::GetBounds()
     
 }
 
-Entity::Type Enemy::getType()
+Entity::Type Enemy::GetType()
 {
     return type_;
 }
 
+void Enemy::Update(vector<Entity*> entities)
+{
 
-void Enemy::DrawEnemy()
+}
+
+
+void Enemy::Draw()
 {
     if (xVel < 0)
             textureRec.width = abs(textureRec.width);

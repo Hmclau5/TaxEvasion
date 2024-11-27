@@ -21,11 +21,14 @@ class Enemy : public Entity
     public:
         Enemy(float x, float y);
 
-        virtual Type getType() override;
+        virtual Type GetType() override;
         
         Rectangle GetBounds();
 
-        virtual void DrawEnemy();
+        virtual void Update(vector<Entity*> entities);
+        
+
+        virtual void Draw()override;
         virtual void Collide(Ground ground);
         virtual void MoveAndSlide();
         virtual void PlayerDetect(Rectangle player);
