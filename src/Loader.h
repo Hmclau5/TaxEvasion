@@ -14,6 +14,7 @@
 #include "Surface.h"
 #include "SubGround.h"
 #include "KillBox.h"
+#include "Wolf.h"
 
 using namespace std;
 

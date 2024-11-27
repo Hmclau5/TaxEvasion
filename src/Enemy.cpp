@@ -19,9 +19,9 @@ Rectangle Enemy::GetBounds()
 void Enemy::DrawEnemy()
 {
     if (xVel < 0)
-            textureRec = {0,0,256,128};
+            textureRec.width = abs(textureRec.width);
         else
-            textureRec = {0,0,-256,128};
+            textureRec.width = -abs(textureRec.width);
 
 
         DrawTextureRec(texture, textureRec , {bounds.x -16 , bounds.y}, WHITE);
@@ -29,4 +29,5 @@ void Enemy::DrawEnemy()
 
 void Enemy::Collide(Ground ground){}
 void Enemy::MoveAndSlide(){}
+void Enemy::PlayerDetect(Rectangle player){}
 

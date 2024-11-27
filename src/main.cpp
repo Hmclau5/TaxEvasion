@@ -11,6 +11,8 @@
 const int screenWidth = 1920;
 const int screenHeight = 1080;
 
+
+
 using namespace std;
 
 int main()
@@ -28,7 +30,7 @@ int main()
     vector<Enemy*>   enemies = load.GetEnemies();
     vector<WinZone> winners = load.GetWinners();
 
-    //vector<vector<Badger>> = load.GetEnemies;
+
     
     
     Camera2D camera = { 0 };
@@ -53,6 +55,7 @@ int main()
         for(long long unsigned int i = 0; i < enemies.size(); i ++)
         {
             enemies[i]->MoveAndSlide();
+            enemies[i]->PlayerDetect(players[0].GetBounds());
             players[0].Collide(*enemies[i]);
         }
 

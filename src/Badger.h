@@ -8,7 +8,7 @@ class Badger : public Enemy
 {
 
     protected:
-        float friction, moveSpeed;
+        float moveSpeed;
         bool grounded;
 
     public:

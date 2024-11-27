@@ -1,6 +1,6 @@
 #include "Player.h"
 
-const float GRAVITY = .25;//1.2;
+const float GRAVITY = 1.2;
 
 
 

@@ -1,24 +1,23 @@
-#include "Badger.h"
+#include "Wolf.h"
+#include "math.h"
 
 const float GRAVITY = 1.2;
 
-Badger::Badger(float xIn, float yIn)
-    : Enemy(xIn , yIn)
+Wolf::Wolf(float xIn, float yIn)
+    : Enemy(xIn, yIn)
 {
-    bounds = {xIn,yIn,256,128};
-    
-    texture = LoadTexture("C:/Users/Haden/Desktop/NewTaxEvasion/assets/badger.png");
-
-    xVel = 5;
+    bounds = {xIn-32, yIn, 384-32, 192};
+    texture = LoadTexture("C:/Users/Haden/Desktop/NewTaxEvasion/assets/wolf.png");
+    xVel = 10;
     yVel = 0;
+    textureRec = {0,0,384,192};
+     
 
-    textureRec = {0,0,256,128};
 
-    grounded = false;
 }
 
-void Badger::Collide(Ground ground)
-{  
+void Wolf::Collide(Ground ground)
+{
     if(CheckCollisionRecs(bounds, ground.GetBounds()) && !grounded)
     {
         Rectangle collision = GetCollisionRec(bounds, ground.GetBounds());
@@ -44,22 +43,34 @@ void Badger::Collide(Ground ground)
             xVel = 0;
         }
 
-        if(bounds.x+bounds.width > ground.GetBounds().x+ground.GetBounds().width||bounds.x < ground.GetBounds().x)
-            xVel = - xVel;
+        if(bounds.x+bounds.width > ground.GetBounds().x+ground.GetBounds().width)
+            bounds.x = ground.GetBounds().x + ground.GetBounds().width - bounds.width;
+        if(bounds.x < ground.GetBounds().x)
+            bounds.x = ground.GetBounds().x;
     }
-
 }
 
-void Badger::MoveAndSlide()
+void Wolf::MoveAndSlide()
 {
 
-    
+        yVel += GRAVITY;
+
+        if(target.x+target.width/2 -200 > bounds.x+bounds.width/2)
+            xVel = abs(xVel);
+        else if(+target.x+target.width/2 +200 < bounds.x+bounds.width/2)
+            xVel = -abs(xVel);
+
+
+  
+        
         bounds.x += xVel;
         bounds.y += yVel;
 
-        yVel += GRAVITY;
-      
-
         grounded = false;
 
+}
+
+void Wolf::PlayerDetect(Rectangle player)
+{
+    target = player;
 }

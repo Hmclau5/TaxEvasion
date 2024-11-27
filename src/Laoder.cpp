@@ -39,6 +39,17 @@ Loader::Loader(string filename)
                 )
             );
         }
+        if(line.substr(0, commas[0]) == "WOLF")
+        {
+
+            enemies.push_back
+            (new Wolf
+                (
+                    stof(line.substr(commas[0]+1, commas[1]- commas[0]-1)),
+                    stof(line.substr(commas[1]+1, commas[2]- commas[1]-1))
+                )
+            );
+        }
         if(line.substr(0, commas[0]) == "KILLBOX")
         {
 
