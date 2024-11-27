@@ -17,7 +17,7 @@
 #include "Wolf.h"
 
 using namespace std;
-
+/*
 class Loader
 {
 
@@ -51,6 +51,17 @@ class Loader
 
 
 
+
+};
+*/
+
+class Loader
+{
+    private:
+        vector<Entity*> entities;
+    public:
+        Loader(string filename);
+        vector<Entity*> GetEntities();
 
 };
 

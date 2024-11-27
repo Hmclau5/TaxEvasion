@@ -4,15 +4,19 @@
 
 
 Enemy::Enemy(float xIn, float yIn)
-{
-    bounds = {xIn,yIn,256,128};
+    : Entity ({xIn,yIn,256,128}), type_(Entity::Type::Enemy){}
 
-}
 
 
 Rectangle Enemy::GetBounds()
 {
     return bounds;
+    
+}
+
+Entity::Type Enemy::getType()
+{
+    return type_;
 }
 
 

@@ -25,16 +25,12 @@ int main()
  
     Loader load("C:/Users/Haden/Desktop/NewTaxEvasion/src/DevLevel.csv");
 
-    vector<Player>  players = load.GetPlayers();
-    vector<Ground*>  grounds = load.GetGrounds();
-    vector<Enemy*>   enemies = load.GetEnemies();
-    vector<WinZone> winners = load.GetWinners();
 
-
-    
+    vector<Entity*> entities = load.GetEntities();
+    /*
     
     Camera2D camera = { 0 };
-    camera.target = {players[0].GetBounds().x,players[0].GetBounds().y};
+    camera.target = {players[0]*->GetBounds().x,players[0].GetBounds().y};
     camera.offset = (Vector2){ screenWidth/2.0f, screenHeight/2.0f };
     camera.rotation = 0.0f;
     camera.zoom = 1.0f;
@@ -114,7 +110,7 @@ int main()
 
 
 
-
+    */
 
     return 0;
 

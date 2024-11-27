@@ -1,24 +1,28 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
+#include "Entity.h"
 #include "raylib.h"
 #include "Ground.h"
 
 
 
 
-class Enemy
+class Enemy : public Entity
 {
      protected:
-        Rectangle bounds, textureRec;
+        Rectangle textureRec;
         float xVel, yVel;  
         Texture2D texture;
         Rectangle Target;
-
+        Type type_;
+        
 
     public:
         Enemy(float x, float y);
 
+        virtual Type getType() override;
+        
         Rectangle GetBounds();
 
         virtual void DrawEnemy();

@@ -1,21 +1,26 @@
 #ifndef GROUND_H
 #define GROUND_H
-#include <raylib.h>
+#include "raylib.h"
+#include "Entity.h"
 
-class Ground
+class Ground : public Entity
 {
     protected:
-        Rectangle bounds;
+        
         Texture2D texture;
         Rectangle textureRec;
+        Type type_;
         
 
     public:
-    Ground(float xIn, float yIn, float widthIn, float heightIn);
+        Ground(float xIn, float yIn, float widthIn, float heightIn);
 
-    Rectangle GetBounds();
+        virtual Type getType() override;
+        
 
-    void DrawGround();
+        Rectangle GetBounds();
+
+        void DrawGround();
 
 
 

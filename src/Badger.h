@@ -18,6 +18,7 @@ class Badger : public Enemy
         void Collide(Ground ground) override;
         void MoveAndSlide() override ;
 
+        
 
 
 };

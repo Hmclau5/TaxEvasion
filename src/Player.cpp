@@ -5,8 +5,9 @@ const float GRAVITY = 1.2;
 
 
 Player::Player(float xIn, float yIn)
+    : Entity({xIn, yIn, 96 , 96}), type_(Entity::Type::Player)
 {
-    bounds = {xIn, yIn, 96 , 96};
+    
     
     xVel = 0;
     yVel = 0;
@@ -34,6 +35,10 @@ Rectangle Player::GetBounds()
     return bounds;
 }
 
+Entity::Type Player::getType()
+{
+    return type_;
+}
 
 
 

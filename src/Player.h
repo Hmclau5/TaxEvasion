@@ -2,19 +2,22 @@
 #define PLAYER_H
 
 #include "raylib.h"
+#include "Entity.h"
 #include "Ground.h"
 
 #include "WinZone.h"
 #include "Enemy.h"
 
 
-class Player
+class Player : public Entity
 {
     private:
-        Rectangle bounds;
+        
         float xVel, yVel, friction, moveSpeed, jumpSpeed, maxSpeed;
         
         bool grounded;
+
+        Type type_;
        
 
         Texture2D texture;
@@ -23,6 +26,7 @@ class Player
     public:
         Player(float xIn, float yIn);
 
+        virtual Type getType() override;
 
         Rectangle GetBounds();
 

@@ -3,17 +3,20 @@
 
 
 #include "raylib.h"
+#include "Entity.h"
 
-class WinZone
+class WinZone : public Entity
 {
-    private:
-        Rectangle bounds;
-        
+    
+    protected:
+        Type type_;
 
     public:
         WinZone(float xIn, float yIn);
 
         Rectangle GetBounds();
+
+        virtual Type getType() override;
 
         void DrawWinZone();
 
