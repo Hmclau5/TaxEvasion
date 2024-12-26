@@ -15,6 +15,7 @@
 #include "SubGround.h"
 #include "KillBox.h"
 #include "Wolf.h"
+#include "BearTrap.h"
 
 using namespace std;
 /*

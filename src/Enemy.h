@@ -4,6 +4,7 @@
 #include "Entity.h"
 #include "raylib.h"
 #include "Ground.h"
+#include "SubGround.h"
 
 
 
@@ -21,11 +22,13 @@ class Enemy : public Entity
     public:
         Enemy(float x, float y);
 
+        ~Enemy();
+
         virtual Type GetType() override;
         
         Rectangle GetBounds();
 
-        virtual void Update(vector<Entity*> entities);
+        virtual void Update(vector<Entity*>& entities);
         
 
         virtual void Draw()override;
@@ -33,7 +36,7 @@ class Enemy : public Entity
         virtual void MoveAndSlide();
         virtual void PlayerDetect(Rectangle player);
 
-        //TODO ~Enemy()
+        
 };
 
 

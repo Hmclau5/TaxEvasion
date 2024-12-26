@@ -17,39 +17,7 @@ Wolf::Wolf(float xIn, float yIn)
 
 }
 
-void Wolf::Collide(Ground ground)
-{
-    if(CheckCollisionRecs(bounds, ground.GetBounds()) && !grounded)
-    {
-        Rectangle collision = GetCollisionRec(bounds, ground.GetBounds());
-        if(collision.width > collision.height && (collision.y > bounds.y))
-        {
-            bounds.y = ground.GetBounds().y - bounds.height;
-            yVel = 0;
-            grounded = true;
-        }
-        if(collision.width > collision.height && (collision.y <= bounds.y))
-        {
-            bounds.y = ground.GetBounds().y + ground.GetBounds().height;
-            yVel = 0;
-        }
-        if(collision.height > collision.width && (collision.x <= bounds.x))
-        {
-            bounds.x = ground.GetBounds().x + ground.GetBounds().width;
-            xVel = 0;
-        }
-        if(collision.height > collision.width && (collision.x > bounds.x))
-        {
-            bounds.x = ground.GetBounds().x - bounds.width;
-            xVel = 0;
-        }
 
-        if(bounds.x+bounds.width > ground.GetBounds().x+ground.GetBounds().width)
-            bounds.x = ground.GetBounds().x + ground.GetBounds().width - bounds.width;
-        if(bounds.x < ground.GetBounds().x)
-            bounds.x = ground.GetBounds().x;
-    }
-}
 
 void Wolf::MoveAndSlide()
 {
@@ -71,12 +39,9 @@ void Wolf::MoveAndSlide()
 
 }
 
-void Wolf::PlayerDetect(Rectangle player)
-{
-    target = player;
-}
 
-void Wolf::Update(vector<Entity*> entities)
+
+void Wolf::Update(vector<Entity*>& entities)
 {
 
     MoveAndSlide();

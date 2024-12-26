@@ -90,7 +90,7 @@ void Player::MoveInput()
     }
 }
 
-void Player::Update(vector<Entity*> entities)
+void Player::Update(vector<Entity*>& entities)
 {
     
     MoveInput();

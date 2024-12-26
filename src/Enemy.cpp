@@ -6,6 +6,10 @@
 Enemy::Enemy(float xIn, float yIn)
     : Entity ({xIn,yIn,256,128}), type_(Entity::Type::Enemy){}
 
+Enemy::~Enemy()
+{
+
+};
 
 
 Rectangle Enemy::GetBounds()
@@ -19,7 +23,7 @@ Entity::Type Enemy::GetType()
     return type_;
 }
 
-void Enemy::Update(vector<Entity*> entities)
+void Enemy::Update(vector<Entity*>& entities)
 {
 
 }

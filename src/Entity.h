@@ -14,6 +14,8 @@ class Entity
     public:
         Entity(Rectangle boundsIn);
 
+        virtual ~Entity();
+
         enum class Type
         {
             Player,
@@ -25,7 +27,7 @@ class Entity
         Type type_;
 
         virtual Type GetType();
-        virtual void Update(vector<Entity*> entities);
+        virtual void Update(vector<Entity*>& entities);
         virtual void Draw();
         Rectangle GetBounds();
 };

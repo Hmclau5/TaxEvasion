@@ -9,7 +9,7 @@ class KillBox : public Enemy
 
     public:
         KillBox(float xIn, float yIn, float widthIn, float heightIn);
-        void Update(vector<Entity*> entities);
+        void Update(vector<Entity*>& entities);
 
 };
 

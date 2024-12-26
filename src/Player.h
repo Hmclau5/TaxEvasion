@@ -38,7 +38,7 @@ class Player : public Entity
 
         float GetyVel();
 
-        void Update(vector<Entity*> enetities  )override;
+        void Update(vector<Entity*>& entities  )override;
 
         
 

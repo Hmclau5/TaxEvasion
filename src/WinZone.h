@@ -9,7 +9,7 @@ class WinZone : public Entity
 {
     
     protected:
-        Type type_;
+        Type type_; 
 
     public:
         WinZone(float xIn, float yIn);

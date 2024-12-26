@@ -18,7 +18,7 @@ class Badger : public Enemy
         void Collide(Ground ground) override;
         void MoveAndSlide() override;
 
-        void Update(vector<Entity*> entities);
+        void Update(vector<Entity*>& entities) override;
 
 
 
